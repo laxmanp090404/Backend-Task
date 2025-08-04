@@ -3,21 +3,14 @@
 ## Overview
 This is a RESTful API for a task management system built using Node.js, Express, MongoDB, and JWT authentication. The API allows for user registration, authentication, and management of tasks.
 
-## Features
-- User authentication and authorization with JWT
-- User management (register, login, view profiles)
-- Task management (create, read, update, delete)
-- Data validation and error handling
-- MongoDB integration
+## Deployed API Base URL
 
-## Tech Stack
-- Node.js
-- Express
-- MongoDB with Mongoose
-- JSON Web Token (JWT)
-- bcryptjs for password hashing
+```
+https://backend-task-enai.onrender.com
+```
 
-## Base URL
+## Local Base URL
+
 ```
 http://localhost:5000
 ```
@@ -405,4 +398,19 @@ Error responses follow this format:
    ```
    npm install
    ```
-3. Create a `.env` file with the following
+3. Create a `.env` file with the following variables:
+   ```
+   PORT=5000
+   DEV_MODE=development
+   MONGO_URI=mongodb://localhost:27017/taskmanagement
+   JWT_SECRET=your_jwt_secret_key_here
+   ```
+4. Run the server:
+   - Development: `npm run dev`
+   - Production: `npm start`
+
+## Authentication Flow
+
+1. Register a user with `/users` endpoint
+2. Login with `/auth` endpoint to receive a JWT token
+3. Include the token in the Authorization header for protected
